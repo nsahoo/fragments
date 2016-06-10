@@ -50,15 +50,15 @@ bufilter = cms.EDFilter(
     "PythiaFilter", 
     MaxEta = cms.untracked.double(9999.),
     MinEta = cms.untracked.double(-9999.),
-    ParticleID = cms.untracked.int32(521)
+    ParticleID = cms.untracked.int32(521)  ## Bu
     )
 
 decayfilter = cms.EDFilter(
         "PythiaDauVFilter",
         verbose         = cms.untracked.int32(1), 
         NumberDaughters = cms.untracked.int32(3), 
-        ParticleID      = cms.untracked.int32(521),  
-        DaughterIDs     = cms.untracked.vint32(-13, 13, 323),  ## mu-, mu+, K*+
+        ParticleID      = cms.untracked.int32(521),  ## Bu
+        DaughterIDs     = cms.untracked.vint32(-13, 13, 323),  ## mu+, mu-, K*+
         MinPt           = cms.untracked.vdouble(2.5, 2.5, -1.), 
         MinEta          = cms.untracked.vdouble(-2.5, -2.5, -9999.), 
         MaxEta          = cms.untracked.vdouble( 2.5,  2.5,  9999.)
@@ -68,8 +68,8 @@ kstarfilter = cms.EDFilter(
     "PythiaDauVFilter",
     verbose         = cms.untracked.int32(1), 
     NumberDaughters = cms.untracked.int32(2), 
-    MotherID        = cms.untracked.int32(521),
-    ParticleID      = cms.untracked.int32(323),  
+    MotherID        = cms.untracked.int32(521), ## Bu
+    ParticleID      = cms.untracked.int32(323),  ## K*+
     DaughterIDs     = cms.untracked.vint32(310, 211),  ## Ks(310), pi+(211)
     MinPt           = cms.untracked.vdouble(0.4, 0.4), 
     MinEta          = cms.untracked.vdouble(-2.5, -2.5), 

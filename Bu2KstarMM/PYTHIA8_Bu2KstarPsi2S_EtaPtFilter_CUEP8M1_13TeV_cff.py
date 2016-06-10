@@ -16,7 +16,7 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
         EvtGen130 = cms.untracked.PSet(
             decay_table = cms.string('GeneratorInterface/EvtGenInterface/data/DECAY_2010.DEC'),
             particle_property_file = cms.FileInPath('GeneratorInterface/EvtGenInterface/data/evt.pdl'),
-            user_decay_file = cms.vstring('GeneratorInterface/ExternalDecays/data/Bu_Kstarmumu_Kspi.dec'),   ## change the DEC file ??
+            user_decay_file = cms.vstring('GeneratorInterface/ExternalDecays/data/Bu_Psi2SKstar_mumuKspi.dec'),   ## DEC file replaced !!
             list_forced_decays = cms.vstring('MyB+','MyB-'),
             operates_on_particles = cms.vint32()
             ),
@@ -50,15 +50,15 @@ bufilter = cms.EDFilter(
     "PythiaFilter", 
     MaxEta = cms.untracked.double(9999.),
     MinEta = cms.untracked.double(-9999.),
-    ParticleID = cms.untracked.int32(521)
+    ParticleID = cms.untracked.int32(521)  ## Bu
     )
  
 psi2sfilter = cms.EDFilter(
     "PythiaDauVFilter",
     verbose         = cms.untracked.int32(1),
     NumberDaughters = cms.untracked.int32(2),
-    MotherID        = cms.untracked.int32(531),
-    ParticleID      = cms.untracked.int32(100443),
+    MotherID        = cms.untracked.int32(521), ## Bu
+    ParticleID      = cms.untracked.int32(100443), ## Psi'
     DaughterIDs     = cms.untracked.vint32(13, -13),  ## mu-, mu+
     MinPt           = cms.untracked.vdouble(2.5, 2.5),
     MinEta          = cms.untracked.vdouble(-2.5, -2.5),
@@ -69,8 +69,8 @@ kstarfilter = cms.EDFilter(
     "PythiaDauVFilter",
     verbose         = cms.untracked.int32(1),
     NumberDaughters = cms.untracked.int32(2),
-    MotherID        = cms.untracked.int32(521),
-    ParticleID      = cms.untracked.int32(323),
+    MotherID        = cms.untracked.int32(521), ## Bu
+    ParticleID      = cms.untracked.int32(323), ## K*+
     DaughterIDs     = cms.untracked.vint32(310, 211),  ## Ks(310), pi+(211)                                                                                       
     MinPt           = cms.untracked.vdouble(0.4, 0.4),
     MinEta          = cms.untracked.vdouble(-2.5, -2.5),
