@@ -70,7 +70,7 @@ decayfilter = cms.EDFilter(
     "PythiaDauVFilter",
     verbose         = cms.untracked.int32(1), ## 0, 1
     NumberDaughters = cms.untracked.int32(2), 
-    ## MotherID        = cms.untracked.int32(0),  ## ??
+    MotherID        = cms.untracked.int32(0),  
     ParticleID      = cms.untracked.int32(521),  ## Bu
     DaughterIDs     = cms.untracked.vint32(443, 321), ## JPsi, K+
     MinPt           = cms.untracked.vdouble(-99., 0.4),   
