@@ -51,15 +51,15 @@ bfilter = cms.EDFilter(
     "PythiaFilter", 
     MaxEta = cms.untracked.double(9999.),
     MinEta = cms.untracked.double(-9999.),
-    ParticleID = cms.untracked.int32(531)
+    ParticleID = cms.untracked.int32(531) ## Bs
     )
 
 psi2sfilter = cms.EDFilter(
     "PythiaDauVFilter",
     verbose         = cms.untracked.int32(1), 
     NumberDaughters = cms.untracked.int32(2), 
-    MotherID        = cms.untracked.int32(531),  
-    ParticleID      = cms.untracked.int32(100443),  
+    MotherID        = cms.untracked.int32(531), ## Bs  
+    ParticleID      = cms.untracked.int32(100443),  ## psi'
     DaughterIDs     = cms.untracked.vint32(13, -13),
     MinPt           = cms.untracked.vdouble(2.5, 2.5), 
     MinEta          = cms.untracked.vdouble(-2.5, -2.5), 
@@ -71,8 +71,8 @@ phifilter = cms.EDFilter(
     verbose         = cms.untracked.int32(1), 
     NumberDaughters = cms.untracked.int32(2), 
     MotherID        = cms.untracked.int32(531),  
-    ParticleID      = cms.untracked.int32(333),  
-    DaughterIDs     = cms.untracked.vint32(321, -321),
+    ParticleID      = cms.untracked.int32(333),  ## phi(1020)
+    DaughterIDs     = cms.untracked.vint32(321, -321), ## K+, K-
     MinPt           = cms.untracked.vdouble(0.4, 0.4), 
     MinEta          = cms.untracked.vdouble(-2.5, -2.5), 
     MaxEta          = cms.untracked.vdouble( 2.5,  2.5)
