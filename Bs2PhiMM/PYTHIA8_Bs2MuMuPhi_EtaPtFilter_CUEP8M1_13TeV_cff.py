@@ -39,8 +39,8 @@ generator.PythiaParameters.processParameters.extend(EvtGenExtraParticles)
 
 configurationMetadata = cms.untracked.PSet(
     version = cms.untracked.string('$Revision: 1.1 $'),
-    name = cms.untracked.string('$Source: Configuration/Generator/python/PYTHIA8_Bs2JpsiPhi_EtaPtFilter_CUEP8M1_13TeV_cff.py  $'),
-    annotation = cms.untracked.string('Summer16: Pythia8+EvtGen130 generation of Bs --> Jpsi(-> mu+ mu-) Phi(K+ K-) , 13TeV, Tune CUETP8M1')
+    name = cms.untracked.string('$Source: Configuration/Generator/python/PYTHIA8_Bs2MuMuPhi_EtaPtFilter_CUEP8M1_13TeV_cff.py  $'),
+    annotation = cms.untracked.string('Summer16: Pythia8+EvtGen130 generation of Bs -->  mu+ mu- Phi(K+ K-) , 13TeV, Tune CUETP8M1')
     )
 
 ###########
