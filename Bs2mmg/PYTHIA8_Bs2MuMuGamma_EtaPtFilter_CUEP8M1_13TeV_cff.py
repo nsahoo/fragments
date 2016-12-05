@@ -60,9 +60,9 @@ decayfilter = cms.EDFilter(
     NumberDaughters = cms.untracked.int32(3),
     ParticleID      = cms.untracked.int32(531),
     DaughterIDs     = cms.untracked.vint32(-13, 13, 22),  ## mu+, mu-, photon
-    MinPt           = cms.untracked.vdouble(2.5, 2.5, -1.),
-    MinEta          = cms.untracked.vdouble(-2.5, -2.5, -9999.),
-    MaxEta          = cms.untracked.vdouble( 2.5,  2.5,  9999.)
+    MinPt           = cms.untracked.vdouble(2.5, 2.5, 1.),
+    MinEta          = cms.untracked.vdouble(-2.5, -2.5, -2.5),
+    MaxEta          = cms.untracked.vdouble( 2.5,  2.5,  2.5)
     )
 
 
