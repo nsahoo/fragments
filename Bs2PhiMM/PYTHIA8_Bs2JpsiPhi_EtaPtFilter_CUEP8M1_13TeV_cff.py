@@ -11,7 +11,6 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
                          ##filterEfficiency = cms.untracked.double(0.004), # Given by PYTHIA after running
                          maxEventsToPrint = cms.untracked.int32(0),
 
-
                          ExternalDecays = cms.PSet(
         EvtGen130 = cms.untracked.PSet(
 #            decay_table = cms.string('GeneratorInterface/EvtGenInterface/data/DECAY_2010.DEC'),
@@ -20,8 +19,8 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
 #            user_decay_file = cms.vstring('GeneratorInterface/ExternalDecays/data/Bs_Jpsiphi_mumuKK.dec'),
             user_decay_file = cms.vstring('GeneratorInterface/ExternalDecays/data/Bs_JpsiPhi_V3.dec'),
             list_forced_decays = cms.vstring('MyB_s0','Myanti-B_s0'),
-            operates_on_particles = cms.vint32()
             ),
+        operates_on_particles = cms.vint32(),
         parameterSets = cms.vstring('EvtGen130')
         ),
 
