@@ -14,9 +14,11 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
 
                          ExternalDecays = cms.PSet(
         EvtGen130 = cms.untracked.PSet(
-            decay_table = cms.string('GeneratorInterface/EvtGenInterface/data/DECAY_2010.DEC'),
+#            decay_table = cms.string('GeneratorInterface/EvtGenInterface/data/DECAY_2010.DEC'),
+            decay_table = cms.string('GeneratorInterface/EvtGenInterface/data/DECAY_2010_NOLONGLIFE.DEC'),
             particle_property_file = cms.FileInPath('GeneratorInterface/EvtGenInterface/data/evt.pdl'),
-            user_decay_file = cms.vstring('GeneratorInterface/ExternalDecays/data/Bs_Jpsiphi_mumuKK.dec'),
+#            user_decay_file = cms.vstring('GeneratorInterface/ExternalDecays/data/Bs_Jpsiphi_mumuKK.dec'),
+            user_decay_file = cms.vstring('GeneratorInterface/ExternalDecays/data/Bs_JpsiPhi_V3.dec'),
             list_forced_decays = cms.vstring('MyB_s0','Myanti-B_s0'),
             operates_on_particles = cms.vint32()
             ),
@@ -27,7 +29,11 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
                          PythiaParameters = cms.PSet(pythia8CommonSettingsBlock,
                                                      pythia8CUEP8M1SettingsBlock,
                                                      ## check this (need extra parameters?)
-                                                     processParameters = cms.vstring("SoftQCD:nonDiffractive = on"),
+                                                     processParameters = cms.vstring('SoftQCD:nonDiffractive = on',
+                                                                                     'PTFilter:filter = on', # this turns on the filter
+                                                                                     'PTFilter:quarkToFilter = 5', # PDG id of b quark
+                                                                                     'PTFilter:scaleToFilter = 1.0'), # scale to look at
+
                                                      parameterSets = cms.vstring('pythia8CommonSettings',
                                                                                  'pythia8CUEP8M1Settings',
                                                                                  'processParameters',
